@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+{% extends 'main/header.html' %}
+{% load static %}       
+{% block content %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 14px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px; 
+
+
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-image:url("{% static 'main/images/slide_01.jpg' %}");
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+  align-items: center;
+
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="about-section">
+  <h1>About Us Page</h1>
+  <p><h5>Blogs and Tutorials is all about keeping you updated with the lates news on tourism and also give you some awesome tutorials.</h5></p>
+  <p>Besides tourism blogging there is also language blogs,blogs on the latest computing technologies.</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+     
+      <div class="container">
+        <h2>Jane Frances</h2>
+        <p class="title">Blogger</p>
+        <p>Tourism and language blogging</p>
+        <p>adafeliciajanefrances@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card" >
+      
+      <div class="container">
+        <h3>Abednego Acheampong</h3>
+        <p class="title">Computing technology blogging</p>
+        <p></p>
+        <p>abednego97@hotmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card" >
+      
+      <div class="container">
+        <h3>Kelly James</h3>
+        <p class="title">Blogger</p>
+        <p>Nature and culture blogging</p>
+        <p>kellyjames770@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer class="page-footer" style="background-color:#474e5d">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Thank You For Your Visit!</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contact Us</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/PointTut">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/tut.point.9">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/tutpoint/">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/about">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+           
+            <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+          </div>
+        </footer>
+{% endblock %}
+</body>
+</html>

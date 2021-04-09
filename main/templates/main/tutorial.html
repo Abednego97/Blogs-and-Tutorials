@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+{% extends 'main/header.html' %}
+
+{% block content %}
+<body>
+<div class="row">
+
+        <div class="col s12, m8, l8">
+            <h3>{{tutorial.Tut_Tittle}}</h3>
+            <p style="font-size:70%">Published {{tutorial.Tut_Date}}</p>
+            {{tutorial.Tut_Content|safe}}
+        </div>
+
+        <div class="col s12 m4 l4">
+            <ul class="collapsible popout">
+                {% for tutorial in sidebar %}
+                    {% if forloop.counter0 == tut_idx %}
+                        <li class="active">
+                            <div class="collapsible-header">{{tutorial.Tut_Tittle}}<br>(currently viewing)</div>
+                        </li>
+                    {% else %}
+                        <li>
+                            <div class="collapsible-header">{{tutorial.Tut_Tittle}}</div>
+                            <div class="collapsible-body">
+                                <p><a href="/{{tutorial.tutorial_slug}}"><button class="btn waves-effect waves-light right-align" style="background-color:yellow; color:black">Go</button></a></p>
+
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer class="page-footer" style="background-color:#474e5d">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Thank You For Your Visit!</h5>
+                <p class="grey-text text-lighten-4">You can contact us through the following links.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contact Us</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/PointTut">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/tut.point.9">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/tutpoint/">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/about">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+           
+            <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+          </div>
+        </footer>
+{% endblock %}
+</html>

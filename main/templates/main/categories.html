@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+{% extends 'main/header.html' %}
+{% load static %}       
+{% block content %}
+
+<style>
+      .carousel{
+        height: 600px;
+        perspective: 100px;
+        background: pink;
+        width: 2000px;
+
+      }
+      .carousel .carousel-item{
+        width: 600px;
+        height: 800px;
+        perspective: 300px;
+
+      }
+      .carousel .carousel-fixed-item{
+        position: relative;
+        z-index: 1;
+        display:table;
+        width:100%;
+        height:60%;
+  }
+</style>
+<!-- Banner-->
+<section>
+<div class="col s12 m6 l4">
+<div class="carousel carousel-slider "id="demo-carousel-content" data-indicators="true">
+  
+    <a class="carousel-item" href="#one!"><img src="{% static 'main/images/slide_01.jpg' %}"></a>
+    <div class="carousel-fixed-item ">
+     <h2 class="white-text">New and Captivating Blogs</h2>
+      <p class="white-text">We bring you a alot of new and awesome blogs </p>
+      <a class="btn waves-effect orange lighten-3 black-text darken-text-2"href="/about">Welcome!</a>
+    </div>
+    
+    <a class="carousel-item" href="#three!"><img src="{% static 'main/images/slide_02.jpg' %}"></a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'main/images/slide_03.jpg' %}"></a>
+    
+</div>
+</section>
+<!--Banner Ends here-->
+<br>
+<section>
+  
+</section>
+  <div class="row">
+        {% for cat in categories %}
+            <div class="col s12 m6 l4">
+                <a href="{{cat.category_slug}}", style="color:#000">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <div class="card-title">{{cat.tutorial_category}}</div>
+                            <!--<p style="font-size:70%">Published {{tut.tutorial_published}}</p>-->
+                            <p>{{cat.category_summary}}</p>
+                        </div>
+                        <div class="card-action right-align">
+                          <a href="{{cat.category_slug}}" class="waves-effect waves-light btn" style="color:#000000; background-color:#ffe6e6">View</a>
+                        </div>
+                    </div>                
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <footer class="page-footer" style="background-color:#474e5d">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Thank You For Your Visit!</h5>
+                <p class="grey-text text-lighten-4">You can contact us through the following links.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contact Us</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/PointTut">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/tut.point.9">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/tutpoint/">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/about">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+           
+            <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+          </div>
+        </footer>
+
+{% endblock %}
+</html>

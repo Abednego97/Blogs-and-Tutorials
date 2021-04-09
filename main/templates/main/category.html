@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+{% extends 'main/header.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-image: url("{% static 'main/images/slide_03.jpg' %}");
+      color: white;
+}
+</style>
+<body>
+<div class="about-section">
+  <h1>New and Captivating Blogs</h1>
+  <p>Blogs and Tutorials is all about keeping you updated with the lates news on tourism and also give you some awesome tutorials.</p>
+  <p>Besides tourism blogging there is also language blogs,blogs on the latest computing technologies.</p>
+</div>
+<br>
+  <div class="row">
+        {% for tut, partone in part_ones.items %}
+            <div class="col s12 m6 l4">
+                <a href="{{partone}}", style="color:#000">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <div class="card-title">{{tut.tutorial_series}}</div>
+                            <!--<p style="font-size:70%">Published {{tut.tutorial_published}}</p>-->
+                            <p>{{tut.series_summary}}</p>
+                        </div>
+                        <div class="card-action right-align">
+                          <a href="{{partone}}" class="waves-effect waves-light btn" style="color:#000000; background-color:#ffe6e6">View</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer class="page-footer" style="background-color:#474e5d">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Thank You For Your Visit!</h5>
+                <p class="grey-text text-lighten-4">You can contact us through the following links.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contact Us</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/PointTut">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/tut.point.9">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/tutpoint/">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/about">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+           
+            <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+          </div>
+        </footer>
+{% endblock %}
+</body>
+</html>
